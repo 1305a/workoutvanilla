@@ -9,6 +9,7 @@ function formingObjects(quantityNumber) {
         taskArray.forEach(element => {
             player[element] = 0
         })
+        console.log(player)
     }
 }
 
