@@ -5,6 +5,12 @@
 .main-wrapper {
     width: 50%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.quantity {
+    display: flex;
 }
 
 .input-quantity {
@@ -13,4 +19,27 @@
     font-size: 40px;
     text-align: center;
     margin-top: 10%;
+}
+
+.table-wrapper {
+
+}
+
+.table {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+}
+
+.task-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-name {
+    padding: 5px;
+}
+
+.task-player {
+    padding: 5px;
 }
