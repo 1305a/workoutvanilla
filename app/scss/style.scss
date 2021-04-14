@@ -12,7 +12,10 @@
 .quantity {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin-bottom: 50px;
+    margin-top: 20px;
 }
 
 .input-quantity {
@@ -20,11 +23,24 @@
     height: 50px;
     font-size: 40px;
     text-align: center;
-    margin-top: 10%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.test-button {
+    width: 160px;
+    height: 40px;
+    //border: 1px solid black;
+    background-color: rgb(135, 195, 222);
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
 }
 
 .table-wrapper {
-
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
 .table {
@@ -53,3 +69,29 @@
     width: 30px;
     //border-radius: 5px;
 }
+
+.calculate-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio {
+    margin-bottom: 30px;
+}
+
+.calculate-button {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #5dd4bc;
+    background: linear-gradient(147deg,#5dd4bc 20%, #8fe06e 80%);
+    background: -webkit-linear-gradient(147deg,#5dd4bc 20%, #8fe06e 80%);
+    background: -moz-linear-gradient(147deg,#5dd4bc 20%, #8fe06e 80%);
+    cursor: pointer;
+}
+
