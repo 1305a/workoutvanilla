@@ -38,14 +38,15 @@ function tableForming(taskArr,playerArr) {
         divColumnPlayer.className = 'column-task'
         taskTable.appendChild(divColumnPlayer)
         for (let k = 0; k < taskArr.length; k++) {
-            console.log(playerArr[j][taskArr[k]])
             let divRow = document.createElement('div')
             divRow.className = 'row-player'
             divColumnPlayer.appendChild(divRow)
             let input = document.createElement('input')
             input.value = playerArr[j][taskArr[k]]
             input.className = 'row-input'
-            
+            input.type = "number"
+            input.dataset.player = j
+            input.dataset.task = taskArr[k]
             divRow.appendChild(input)
         }
         
