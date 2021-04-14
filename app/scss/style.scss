@@ -11,6 +11,8 @@
 
 .quantity {
     display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
 .input-quantity {
@@ -31,15 +33,23 @@
     justify-content: center;
 }
 
-.task-column {
+.column-task {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
-.task-name {
+.row-task {
     padding: 5px;
 }
 
-.task-player {
+.row-player {
     padding: 5px;
+    //border: 1px solid red;
+    
+}
+
+.row-input {
+    width: 30px;
+    //border-radius: 5px;
 }
