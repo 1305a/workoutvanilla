@@ -1,3 +1,7 @@
+// body {
+//     font-family: Roboto, sans-serif;
+// }
+
 .main-style {
     display: flex;
 }
@@ -14,7 +18,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     margin-top: 20px;
 }
 
@@ -40,7 +44,7 @@
 .table-wrapper {
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .table {
@@ -78,7 +82,7 @@
 }
 
 .radio {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .calculate-button {
@@ -95,3 +99,18 @@
     cursor: pointer;
 }
 
+.difficulty-text {
+    margin-bottom: 20px;
+}
+
+.difficulty-text-yellow {
+    background-color: rgba(235, 235, 57, 0.2) ;
+}
+
+.difficulty-text-green {
+    background-color: rgba(46, 235, 71, 0.2);
+}
+
+.difficulty-text-red {
+    background-color: rgba(253, 101, 30, 0.2);
+}
