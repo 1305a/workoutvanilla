@@ -105,22 +105,32 @@ function tableForming(taskArr,playerArr) {
 }
 
 function calculate() {
+    const finalArray = []
+        
     for (let pl = 0; pl < playerArray.length; pl++) {
         const randomArray = []
-        
+        const finalTasks = {'name':playerArray[pl].name,'altName':playerArray[pl].altName}
+        finalArray.push(finalTasks)
+
         for (let i = 0; i < taskArray.length; i++) {
             randomArray.push(taskArray[i])
         }
-            randomArray.sort(function(){ 
-                return 0.5 - Math.random()
-            })
-        
-            for (let ra = 0; ra < taskNumbers; ra++) {
+        randomArray.sort(function(){ 
+            return 0.5 - Math.random()
+        })
+    
+        for (let ra = 0; ra < taskNumbers; ra++) {
             const taskInput = document.getElementById(playerArray[pl].altName+randomArray[ra])
-            console.log(playerArray[pl].name, randomArray[ra],taskInput.valueAsNumber)
+            finalArray[pl][randomArray[ra]] = taskInput.valueAsNumber
         }
     }
+    showResults(finalArray)
 }
+
+function showResults(finalArray) {
+    
+}
+
 
 quantity.addEventListener ('change', (event) => {
     event.preventDefault()
