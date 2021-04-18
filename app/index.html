@@ -14,8 +14,14 @@
         <div class="main-wrapper">
             <div class="quantity">
                 <span>Количество игроков</span>
-                <input type="number" class="input-quantity" value = "1" title="Введи количество игроков">
-                <div class="test-button">Заполнить тестовыми данными</div>
+                    <div class="quantity-button">
+                        <input type="number" class="input-quantity" value = "1" title="Введи количество игроков" readonly>
+                        <button class="button-updown button-up">&#9650;</button>
+                        <button class="button-updown button-down">&#9660;</button>
+                        
+                    </div>
+                    <!-- <button class="button-change-name">Изменить имена игроков</button> -->
+                    <div class="test-button">Заполнить тестовыми данными</div>
             </div>
 
             <div class="table-wrapper">
@@ -55,6 +61,18 @@
         <button class="modal-close" type="button">Закрыть</button>
     </section>
     <div class="modal-overlay"></div>
+
+    <!-- <section class="modal modal-name">
+        <div class="name-text-input">
+            <div class="name-text">
+                Игрок 1
+            </div>
+            <div class="name-input">
+                Игрок 2
+            </div>
+        </div>
+        <button>Записать</button>
+    </section> -->
 
     <script src="js/main.min.js"></script>
 </body>

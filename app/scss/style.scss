@@ -226,3 +226,31 @@
     animation: bounce 0.6s;
 }
 
+.button-updown {
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.quantity-button {
+    display: flex;
+    align-items: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.button-change-name {
+    height: 50px;
+    //margin-left: 20px;
+    margin-bottom: 10px;
+    border: 0;
+    background-color: #e4d1fa;
+    border-radius: 5px;
+    cursor: pointer;
+}

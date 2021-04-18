@@ -7,6 +7,9 @@ const modalResults = document.querySelector('.modal-wrapper')
 const modal = document.querySelector('.modal')
 const modalOverlay = document.querySelector('.modal-overlay')
 const modalClose = document.querySelector('.modal-close')
+const buttonUp = document.querySelector('.button-up')
+const buttonDown = document.querySelector('.button-down')
+// const buttonChangeName = document.querySelector('.button-change-name')
 let difficultyLevel = ''
 const taskArray = ['Отжимание','Планка (мин)','Скакалка','Бицепс','Трицепс','Приседания','Колесо','Пресс','Эспандер','По желанию']
 const taskArrayTest = [20,2,40,30,20,30,5,30,20,10]
@@ -179,10 +182,31 @@ function showResults(finalArray) {
     }
 }
 
-quantity.addEventListener ('change', (event) => {
+// quantity.addEventListener ('change', (event) => {
+//     event.preventDefault()
+//     objectForming(quantity.valueAsNumber)
+// })
+
+buttonUp.addEventListener ('click', (event) => {
     event.preventDefault()
-    objectForming(quantity.valueAsNumber)
+    if (quantity.valueAsNumber < 20) {
+        quantity.valueAsNumber += 1
+        objectForming(quantity.valueAsNumber)
+    }
 })
+
+buttonDown.addEventListener ('click', (event) => {
+    event.preventDefault()
+    if (quantity.valueAsNumber > 1) {
+        quantity.valueAsNumber -= 1
+        objectForming(quantity.valueAsNumber)
+    }
+})
+
+// buttonChangeName.addEventListener ('click', (event) => {
+//     event.preventDefault()
+
+// })
 
 const difficulty = document.querySelectorAll('input[name="difficulty"]');
     [...difficulty].forEach(function(item) {
