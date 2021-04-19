@@ -5,11 +5,16 @@ const testButton = document.querySelector('.test-button')
 const difText = document.querySelector('.difficulty-text')
 const modalResults = document.querySelector('.modal-wrapper')
 const modal = document.querySelector('.modal')
+const modalTask = document.querySelector('.modal-task')
 const modalOverlay = document.querySelector('.modal-overlay')
 const modalClose = document.querySelector('.modal-close')
+const modalCloseName = document.querySelector('.modal-close-name')
 const buttonUp = document.querySelector('.button-up')
 const buttonDown = document.querySelector('.button-down')
-// const buttonChangeName = document.querySelector('.button-change-name')
+const buttonChangeName = document.querySelector('.button-change-name')
+const buttonSaveName = document.querySelector('.button-save-name')
+const modalName = document.querySelector('.modal-name')
+const modalNameTable = document.querySelector('.modal-name-table')
 let difficultyLevel = ''
 const taskArray = ['Отжимание','Планка (мин)','Скакалка','Бицепс','Трицепс','Приседания','Колесо','Пресс','Эспандер','По желанию']
 const taskArrayTest = [20,2,40,30,20,30,5,30,20,10]
@@ -72,6 +77,7 @@ function tableForming(taskArr,playerArr) {
         let divFirstPlayer = document.createElement('div')
         divFirstPlayer.className = 'row-task'
         divFirstPlayer.innerHTML = playerArr[j].name.length > 0 ? playerArr[j].name : playerArr[j].altName
+        divFirstPlayer.id = 'row'+playerArr[j].altName
         divColumnPlayer.appendChild(divFirstPlayer)
 
         for (let k = 0; k < taskArr.length; k++) {
@@ -115,7 +121,7 @@ function tableForming(taskArr,playerArr) {
     }
 }
 
-function calculate() {
+function calculateTasks() {
     const finalArray = []
         
     for (let pl = 0; pl < playerArray.length; pl++) {
@@ -182,6 +188,45 @@ function showResults(finalArray) {
     }
 }
 
+function formingNameTable() {
+    while (modalNameTable.firstChild) {
+        modalNameTable.removeChild(modalNameTable.firstChild);
+        }
+    
+        for (let i = 0; i < playerArray.length; i++) {
+            let divRowAll = document.createElement('div')
+            divRowAll.className = 'name-text-input'
+            modalNameTable.appendChild(divRowAll)
+            
+            let divRowText = document.createElement('div')
+            divRowText.className = 'name-split-text'
+            divRowText.innerHTML = playerArray[i].altName
+            divRowAll.appendChild(divRowText)
+
+            let divRowSplitInput = document.createElement('div')
+            divRowSplitInput.className = 'name-split-input'
+            divRowAll.appendChild(divRowSplitInput)
+
+            let divRowInput = document.createElement('input')
+            divRowInput.className = 'name-input'
+            divRowInput.value = playerArray[i].name
+            divRowInput.id = 'pl' + playerArray[i].altName
+            divRowSplitInput.appendChild(divRowInput)
+        }
+}
+
+function saveName() {
+    for (let i = 0; i < playerArray.length; i++) {
+        if (document.getElementById('pl'+ playerArray[i].altName)) {
+            playerArray[i].name = document.getElementById('pl'+ playerArray[i].altName).value
+        }
+        if (document.getElementById('row'+ playerArray[i].altName)) {
+            document.getElementById('row'+ playerArray[i].altName).innerHTML = document.getElementById('pl'+ playerArray[i].altName).value
+        }
+    }
+
+}
+
 // quantity.addEventListener ('change', (event) => {
 //     event.preventDefault()
 //     objectForming(quantity.valueAsNumber)
@@ -203,10 +248,28 @@ buttonDown.addEventListener ('click', (event) => {
     }
 })
 
-// buttonChangeName.addEventListener ('click', (event) => {
-//     event.preventDefault()
+buttonChangeName.addEventListener ('click', (event) => {
+    event.preventDefault()
+    if (modalName.classList.contains('modal-show')===false) {
+        modalName.classList.add('modal-show')
+    }
+    formingNameTable()
+})
 
-// })
+modalCloseName.addEventListener ('click', (event) => {
+    event.preventDefault()
+    if (modalName.classList.contains('modal-show')===true) {
+        modalName.classList.remove('modal-show')
+    }
+})
+
+buttonSaveName.addEventListener ('click', (event) => {
+    event.preventDefault()
+    saveName()
+    if (modalName.classList.contains('modal-show')===true) {
+        modalName.classList.remove('modal-show')
+    }
+})
 
 const difficulty = document.querySelectorAll('input[name="difficulty"]');
     [...difficulty].forEach(function(item) {
@@ -218,9 +281,9 @@ const difficulty = document.querySelectorAll('input[name="difficulty"]');
 
 calculateButton.addEventListener ('click', (event) => {
     event.preventDefault()
-    calculate()
-    if (modal.classList.contains('modal-show')===false) {
-        modal.classList.add('modal-show')
+    calculateTasks()
+    if (modalTask.classList.contains('modal-show')===false) {
+        modalTask.classList.add('modal-show')
     }
     if (modalOverlay.classList.contains('modal-show')===false) {
         modalOverlay.classList.add('modal-show')
