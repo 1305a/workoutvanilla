@@ -221,7 +221,7 @@ function saveName() {
             playerArray[i].name = document.getElementById('pl'+ playerArray[i].altName).value
         }
         if (document.getElementById('row'+ playerArray[i].altName)) {
-            document.getElementById('row'+ playerArray[i].altName).innerHTML = document.getElementById('pl'+ playerArray[i].altName).value
+            document.getElementById('row'+ playerArray[i].altName).innerHTML = document.getElementById('pl'+ playerArray[i].altName).value.length>0 ? document.getElementById('pl'+ playerArray[i].altName).value : playerArray[i].altName
         }
     }
 
