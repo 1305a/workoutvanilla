@@ -90,10 +90,11 @@ function tableForming(taskArr,playerArr) {
             // input.dataset.player = j
             // input.dataset.task = taskArr[k]
             input.id = playerArr[j].altName + taskArr[k]
-            const newInput = divRow.appendChild(input)
+            //const newInput = divRow.appendChild(input)
+            divRow.appendChild(input)
             //console.log(newInput)
             // const newInputBranch = document.getElementById(playerArr[j].altName + taskArr[k])
-            // const arrTest = []
+            //  const arrTest = []
             // arrTest.push(newInputBranch)
             // arrTest.push(newInputBranch)
             // console.log(arrTest)
