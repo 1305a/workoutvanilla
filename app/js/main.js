@@ -21,7 +21,6 @@ const taskArrayTest = [20,2,40,30,20,30,5,30,20,10]
 const playerArray = []
 let taskNumbers = 5
 
-
 function objectForming(quantityNumber,test) {
     playerArray.length = 0
     for (let index = 0; index < quantityNumber; index++) {
@@ -97,7 +96,6 @@ function tableForming(taskArr,playerArr) {
 }
 
  function setDifficulty (difLevel) {
-
     if (difLevel === 'easy') {
         taskNumbers = 3
         difText.innerHTML = `3 задания / повторений 70-85%`
@@ -123,7 +121,7 @@ function tableForming(taskArr,playerArr) {
 
 function calculateTasks() {
     const finalArray = []
-        
+
     for (let pl = 0; pl < playerArray.length; pl++) {
         const randomArray = []
         const finalTasks = {'name':playerArray[pl].name,'altName':playerArray[pl].altName}
@@ -224,13 +222,7 @@ function saveName() {
             document.getElementById('row'+ playerArray[i].altName).innerHTML = document.getElementById('pl'+ playerArray[i].altName).value.length>0 ? document.getElementById('pl'+ playerArray[i].altName).value : playerArray[i].altName
         }
     }
-
 }
-
-// quantity.addEventListener ('change', (event) => {
-//     event.preventDefault()
-//     objectForming(quantity.valueAsNumber)
-// })
 
 buttonUp.addEventListener ('click', (event) => {
     event.preventDefault()
